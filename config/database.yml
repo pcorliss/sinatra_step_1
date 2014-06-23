@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: sinatra1_development
+  pool: 5
+  username: sinatra1
+  password:
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: sinatra1_test
+  pool: 5
+  username: sinatra1
+  password:
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: <%= ENV["POSTGRES_DATABASE"] || 'sinatra1_production' %>
+  pool: 5
+  username: <%= ENV["POSTGRES_USER"] || 'sinatra1' %>
+  password: <%= ENV["POSTGRES_PASS"] %>
+  host: <%= ENV["POSTGRES_HOST"] || 'localhost' %>
+  port: <%= ENV["POSTGRES_PORT"] || 5432 %>

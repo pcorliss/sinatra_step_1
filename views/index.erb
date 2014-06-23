@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<title>Message Board</title>
+</head>
+<body>
+
+<form method='post'>
+  <input type='text' name='[message]body'>
+  <input type='submit'>
+</form>
+
+<% @messages.each do |message| %>
+  <div>
+    <%= message.body %>
+  </div>
+<% end %>
+
+</body>
+</html>
