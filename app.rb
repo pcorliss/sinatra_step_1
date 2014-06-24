@@ -4,7 +4,7 @@ require './config/environments'
 require './model/message'
 
 post "/" do
-  Message.create(body: params[:message][:body])
+  Message.create(body: params[:message][:body], name: params[:message][:name])
   redirect '/'
 end
 
