@@ -13,6 +13,7 @@ post "/" do
 end
 
 get "/" do
+  Message.where('created_at < ?', 10.minutes.ago).destroy_all
   @messages = Message.all.order('id desc')
   enabled? ? erb(:index) : "Not yet..."
 end
